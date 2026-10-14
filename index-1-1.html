@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio webpage of Satya Nadella, Chairman and CEO of Microsoft">
+  <title>Satya Nadella | Portfolio</title>
+  <style>
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7fb;
+    color: #333;
+}
+
+/* Header */
+#header {
+    background: linear-gradient(135deg, #0078d4, #003e73);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.header-text h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.designation {
+    font-size: 18px;
+    color: #e0efff;
+}
+
+/* Navigation Bar */
+#navbar {
+    background-color: #003e73;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#navbar ul li {
+    margin: 0;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#navbar ul li a:hover {
+    background-color: #0078d4;
+}
+
+/* Main Content */
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Sections */
+section {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    scroll-margin-top: 80px;
+}
+
+section h2 {
+    color: #005a9e;
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #0078d4;
+}
+
+section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Links */
+section a {
+    color: #0078d4;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+/* Education Table */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background-color: #005a9e;
+    color: white;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0f6fc;
+}
+
+tbody tr:hover {
+    background-color: #e0efff;
+}
+
+/* Major Contributions */
+.card-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.card-list li {
+    background-color: #f0f6fc;
+    padding: 20px;
+    border-left: 5px solid #0078d4;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.card-list h3 {
+    color: #005a9e;
+    margin-bottom: 10px;
+}
+
+.card-list p {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* Awards */
+#awards ul {
+    padding-left: 25px;
+}
+
+#awards li {
+    margin-bottom: 12px;
+    padding-left: 5px;
+}
+
+#awards li::marker {
+    color: #0078d4;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.gallery figure {
+    background-color: #f0f6fc;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery figcaption {
+    padding: 12px;
+    font-weight: bold;
+    color: #003e73;
+}
+
+/* Contact Form */
+#contact form {
+    max-width: 600px;
+    margin: auto;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #003e73;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: 0 0 5px rgba(0, 120, 212, 0.3);
+}
+
+#contact textarea {
+    resize: vertical;
+}
+
+#contact button {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact button:hover {
+    background-color: #003e73;
+}
+
+/* Footer */
+#footer {
+    background-color: #003e73;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+#footer p {
+    margin-bottom: 8px;
+}
+
+#footer .small {
+    font-size: 13px;
+    color: #c9dff5;
+    margin-top: 15px;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 768px) {
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    .designation {
+        font-size: 16px;
+    }
+
+    #navbar ul li a {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .card-list {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery img {
+        height: 180px;
+    }
+}
+
+/* Responsive Design for Mobile Phones */
+@media (max-width: 480px) {
+    #header {
+        padding: 30px 15px;
+    }
+
+    .profile-photo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .header-text h1 {
+        font-size: 26px;
+    }
+
+    .designation {
+        font-size: 14px;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #navbar ul li a {
+        padding: 10px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 18px;
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        font-size: 23px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 200px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #footer {
+        font-size: 14px;
+    }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <img src="images/satya-nadella.svg" alt="Photograph of Satya Nadella" class="profile-photo">
+    <div class="header-text">
+      <h1>Satya Nadella</h1>
+      <p class="designation">Chairman &amp; Chief Executive Officer, Microsoft</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contributions">Contributions</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Satya Narayana Nadella is an Indian-American business executive and the Chairman and
+        Chief Executive Officer of Microsoft. Born on 19 August 1967 in Hyderabad, India, he
+        completed his engineering degree in India before moving to the United States for higher
+        studies. He joined Microsoft in 1992 and steadily rose through the company, leading major
+        divisions such as Microsoft Business Solutions, Online Services and the Server and Tools
+        business, where he helped build Azure into one of the world's leading cloud platforms.
+      </p>
+      <p>
+        In February 2014 he became Microsoft's third CEO, succeeding Steve Ballmer. Under his
+        leadership the company shifted towards a cloud-first and AI-first strategy, embraced open
+        source, and adopted a culture of empathy and continuous learning, which he describes in
+        his book <em>Hit Refresh</em>. Microsoft's market value has grown several times over
+        during his tenure. He is also known for his love of cricket, poetry and philanthropy.
+      </p>
+      <p>
+        Learn more on his
+        <a href="https://en.wikipedia.org/wiki/Satya_Nadella" target="_blank" rel="noopener">Wikipedia page</a>
+        or the
+        <a href="https://news.microsoft.com/exec/satya-nadella/" target="_blank" rel="noopener">Microsoft profile</a>.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Degree</th>
+              <th>Institution</th>
+              <th>Field</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Schooling</td>
+              <td>Hyderabad Public School, Begumpet</td>
+              <td>School Education</td>
+              <td>Up to 1984</td>
+            </tr>
+            <tr>
+              <td>B.E.</td>
+              <td>Manipal Institute of Technology</td>
+              <td>Electronics &amp; Communication Engineering</td>
+              <td>1988</td>
+            </tr>
+            <tr>
+              <td>M.S.</td>
+              <td>University of Wisconsin–Milwaukee</td>
+              <td>Computer Science</td>
+              <td>1990</td>
+            </tr>
+            <tr>
+              <td>MBA</td>
+              <td>University of Chicago Booth School of Business</td>
+              <td>Business Administration</td>
+              <td>1997</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- MAJOR CONTRIBUTIONS -->
+    <section id="contributions">
+      <h2>Major Contributions</h2>
+      <ol class="card-list">
+        <li>
+          <h3>Microsoft Azure</h3>
+          <p>Led the Server and Tools business and scaled Azure into a global cloud computing platform.</p>
+        </li>
+        <li>
+          <h3>Cloud-First Transformation</h3>
+          <p>Moved Microsoft from a Windows-centric company to a cloud and subscription-based services company, including Microsoft 365.</p>
+        </li>
+        <li>
+          <h3>Embracing Open Source</h3>
+          <p>Brought Linux and open source to Azure and led the acquisitions of LinkedIn (2016) and GitHub (2018).</p>
+        </li>
+        <li>
+          <h3>AI and Copilot</h3>
+          <p>Drove Microsoft's AI strategy, including its partnership with OpenAI and the integration of Copilot across products.</p>
+        </li>
+        <li>
+          <h3>Growth Mindset Culture</h3>
+          <p>Rebuilt company culture around empathy, collaboration and learning, as described in <em>Hit Refresh</em>.</p>
+        </li>
+        <li>
+          <h3>Accessibility and Inclusion</h3>
+          <p>Championed accessible technology and the Microsoft Adaptive Controller for gamers with disabilities.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards">
+      <h2>Awards &amp; Achievements</h2>
+      <ul>
+        <li><strong>Padma Bhushan (2022)</strong> &ndash; one of India's highest civilian honours.</li>
+        <li><strong>Financial Times Person of the Year (2019)</strong>.</li>
+        <li><strong>Fortune Businessperson of the Year (2019)</strong>.</li>
+        <li><strong>Chairman of Microsoft (2021)</strong> &ndash; added to his role as CEO.</li>
+        <li><strong>Author of <em>Hit Refresh</em> (2017)</strong> &ndash; an international bestseller.</li>
+      </ul>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <figure>
+          <img src="images/gallery1.svg" alt="Satya Nadella speaking at a conference">
+          <figcaption>Keynote Speech</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery2.svg" alt="Microsoft headquarters in Redmond">
+          <figcaption>Microsoft Campus</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery3.svg" alt="Cover of the book Hit Refresh">
+          <figcaption>Hit Refresh</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <form action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <p><strong>Submitted by:</strong> Your Name</p>
+    <p>Roll No: 00000 &nbsp;|&nbsp; Class: Your Class &nbsp;|&nbsp; Division: A</p>
+    <p>Laxmi Institute</p>
+    <p class="small">&copy; 2026 Student Portfolio Project. Content on this page is for academic purposes.</p>
+  </footer>
+
+</body>
+</html>
